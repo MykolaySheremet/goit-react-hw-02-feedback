@@ -12,8 +12,11 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      <Feedback>
-
+      <Feedback
+        initialValueGood={0}
+        initialValueNeutral={0}
+        initialValueBad={0}
+      >
       </Feedback>
     
     </div>

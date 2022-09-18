@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Container, ContainerListBtm, ContainerList } from './FeedbackList.styled';
 
-export const FeedbackList = ({incrementGood, incrementNeutral,incrementBad }) => {
+export const FeedbackList = ({ incrementGood, incrementNeutral, incrementBad }) => {
     return (
         <Container>
                     <ContainerList >
@@ -19,4 +20,10 @@ export const FeedbackList = ({incrementGood, incrementNeutral,incrementBad }) =>
                 </ContainerList>
                 </Container>
     )
+}
+
+FeedbackList.propTypes = {
+    incrementGood: PropTypes.func.isRequired,
+    incrementNeutral: PropTypes.func.isRequired,
+    incrementBad: PropTypes.func.isRequired
 }

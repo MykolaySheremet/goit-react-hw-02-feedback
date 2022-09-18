@@ -1,4 +1,5 @@
 import { StatisticsTitle, StatisticsFeedback, StatisticsCard,StatisticsValue,RezultContainer } from './Statistics.styled';
+import PropTypes from 'prop-types';
 
 export const Statistics = ({ ValueGood, ValueNatuer, ValueBad }) => {
    
@@ -28,4 +29,11 @@ export const Statistics = ({ ValueGood, ValueNatuer, ValueBad }) => {
         </StatisticsCard>
         
     )
+}
+
+Statistics.propTypes = {
+    ValueGood: PropTypes.number.isRequired,
+    ValueNatuer: PropTypes.number.isRequired,
+    ValueBad: PropTypes.number.isRequired
+    
 }
