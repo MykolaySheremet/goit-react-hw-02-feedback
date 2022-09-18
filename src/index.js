@@ -4,7 +4,7 @@ import { App } from 'components/App';
 import './index.css';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './theme';
-console.log(theme)
+
 
 
 

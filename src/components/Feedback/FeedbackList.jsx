@@ -1,20 +1,22 @@
-import { Container, ContainerListBtm,ContainerList } from './FeedbackList.styled';
+import React from "react";
+import { Container, ContainerListBtm, ContainerList } from './FeedbackList.styled';
 
-export const FeedbackList = () => {
+export const FeedbackList = ({incrementGood, incrementNeutral,incrementBad }) => {
     return (
         <Container>
-                <ContainerList>
-                    <ContainerListBtm>Good
+                    <ContainerList >
+                        <ContainerListBtm type="button" onClick={incrementGood}>Good
+                        </ContainerListBtm>
+                    </ContainerList>
+                    <ContainerList>
+                        <ContainerListBtm type="button" onClick={incrementNeutral}
+                    >Neutral
                     </ContainerListBtm>
                 </ContainerList>
                 <ContainerList>
-                    <ContainerListBtm>Neutral
+                    <ContainerListBtm type="button" onClick={incrementBad}>Bad
                     </ContainerListBtm>
                 </ContainerList>
-                <ContainerList>
-                    <ContainerListBtm>Bad
-                    </ContainerListBtm>
-                </ContainerList>
-        </Container>
+                </Container>
     )
 }

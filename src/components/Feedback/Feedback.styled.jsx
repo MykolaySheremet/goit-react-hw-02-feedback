@@ -10,6 +10,7 @@ font-weight: ${p => p.theme.fontWeights.bold};
 
 `
 export const Section = styled.section`
+background-color: violet;
 display: flex;
 flex-direction: column;
 `
