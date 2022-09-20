@@ -10,6 +10,7 @@ font-weight: ${p => p.theme.fontWeights.bold};
 
 `
 export const Section = styled.section`
+padding: ${p => p.theme.space[4]}px;
 background-color: violet;
 display: flex;
 flex-direction: column;
