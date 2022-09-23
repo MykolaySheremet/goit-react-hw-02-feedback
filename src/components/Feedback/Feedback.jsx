@@ -2,7 +2,6 @@ import React from "react";
 import { FeedbackList } from "../FeedbackList/FeedbackList";
 import { Title, Section} from './Feedback.styled';
 import { Statistics } from '../Statictics/Statistics';
-import PropTypes from 'prop-types';
 import { StatisticsTitle, StatisticsCard } from '../Statictics/Statistics.styled';
 import { Notification } from 'components/Notification/Notification';
 
@@ -32,6 +31,7 @@ export class Feedback extends React.Component{
         
         return percentageGood;
     }
+
 
 
     
