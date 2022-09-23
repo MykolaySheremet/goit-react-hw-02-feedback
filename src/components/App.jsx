@@ -13,9 +13,6 @@ export const App = () => {
       }}
     >
       <Feedback
-        initialValueGood={0}
-        initialValueNeutral={0}
-        initialValueBad={0}
       >
       </Feedback>
     

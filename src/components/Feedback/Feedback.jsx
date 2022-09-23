@@ -3,19 +3,15 @@ import { FeedbackList } from "../FeedbackList/FeedbackList";
 import { Title, Section} from './Feedback.styled';
 import { Statistics } from '../Statictics/Statistics';
 import PropTypes from 'prop-types';
+import { StatisticsTitle, StatisticsCard } from '../Statictics/Statistics.styled';
+import { Notification } from 'components/Notification/Notification';
 
 export class Feedback extends React.Component{
     
-    static propTypes = {
-        initialValueGood: PropTypes.number.isRequired,
-        initialValueNeutral: PropTypes.number.isRequired,
-        initialValueBad: PropTypes.number.isRequired
-    }
-
     state = {
-        good: this.props.initialValueGood,
-        neutral: this.props.initialValueNeutral,
-        bad: this.props.initialValueBad
+        good: 0,
+        neutral: 0,
+        bad: 0
     }
 
     handleIncrement = (e) => {
@@ -41,22 +37,30 @@ export class Feedback extends React.Component{
     
     
     render() {
+        let totalFeedback = this.countTotalFeedback();
         return (
         <Section>
                 <Title> Please leave feedback </Title>
-                <FeedbackList options={
-                    [
-                    'good', 'neutral', 'bad']
-                    }
+                <FeedbackList 
+                    options ={Object.keys(this.state)}
                     addFeedback ={this.handleIncrement}
                 ></FeedbackList>
-                <Statistics
-                    ValueGood={this.state.good}
-                    ValueNatuer={this.state.neutral}
-                    ValueBad={this.state.bad}
-                    totalFeedback={this.countTotalFeedback()}
-                    percentage = {this.countPositiveFeedbackPercentage()}
-                ></Statistics>
+
+                <StatisticsCard>
+                    <StatisticsTitle>Statistics</StatisticsTitle>
+                    {totalFeedback === 0
+                        ? <Notification message="There is no feedback"></Notification>
+                        : <Statistics
+                            ValueGood={this.state.good}
+                            ValueNatuer={this.state.neutral}
+                            ValueBad={this.state.bad}
+                            totalFeedback={this.countTotalFeedback()}
+                            percentage={this.countPositiveFeedbackPercentage()}>
+                        </Statistics>}
+                
+                </StatisticsCard>
+                        
+                
         </Section>
     )}
 }

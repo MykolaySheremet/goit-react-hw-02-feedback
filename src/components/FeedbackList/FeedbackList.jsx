@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Container, ContainerListBtm, ContainerList } from './FeedbackList.styled';
 
 export const FeedbackList = ({ options, addFeedback }) => {
+    
     return (
         <Container>
             {options.map(item => (
